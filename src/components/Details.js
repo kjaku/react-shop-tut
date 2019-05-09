@@ -16,12 +16,14 @@ class Details extends Component {
             price,
             title,
             inCart,
+            caption,
+            url,
           } = value.detailProduct;
           return (
             <div className="container py-5">
               {/* {title} */}
               <div className="row">
-                <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
+                <div className="col-10 mx-auto text-center text-slanted text-blue ">
                   <h1>{title}</h1>
                 </div>
               </div>
@@ -29,6 +31,7 @@ class Details extends Component {
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3">
                   <img src={img} alt="product" className="img-fluid" />
+                  <p className="pl-2 text-secondary">{caption}</p>
                 </div>
                 <div className="col-10 mx-auto col-md-6 my-3">
                   <div className="text-bold text-title text-muted text-uppercase mt-3 mb-2">
@@ -36,28 +39,38 @@ class Details extends Component {
                   </div>
 
                   <p className="text-muted lead">{info}</p>
-
+                  <h4>
+                    Adres strony:
+                    <a
+                      href={url}
+                      className="ml-2"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {url}
+                    </a>
+                  </h4>
                   <h4 className="text-blue">
                     <strong>
-                      Price: <span>$</span>
-                      {price}
+                      Cena: <span className="ml-1">{price} zł</span>
                     </strong>
                   </h4>
-                </div>
-                <div>
-                  <ButtonContainer
-                    cart
-                    disabled={inCart ? true : false}
-                    onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
-                    }}
-                  >
-                    {inCart ? 'inCart' : 'Add To Cart'}
-                  </ButtonContainer>
-                  <Link to="/">
-                    <ButtonContainer>Back To Products</ButtonContainer>
-                  </Link>
+                  <div>
+                    <ButtonContainer
+                      className="mr-2"
+                      cart
+                      disabled={inCart ? true : false}
+                      onClick={() => {
+                        value.addToCart(id);
+                        value.openModal(id);
+                      }}
+                    >
+                      {inCart ? 'Jest' : 'do koszyka'}
+                    </ButtonContainer>
+                    <Link to="/">
+                      <ButtonContainer>Powrót</ButtonContainer>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

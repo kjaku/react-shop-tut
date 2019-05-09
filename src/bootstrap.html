@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    .dotted{
+      border:dotted 1px black ;
+    }
+    a{
+      color:black;
+      text-decoration: underline;
+      /* font-weight:bold; */
+    }
+    
+    body {
+      /* background: #dedede; */
+    }
+  </style>
+
+<!-- =================NAV================= -->
+    <div class="bd-highlight border-bottom border-dark dotted d-flex justify-content-between ">
+      <!-- <div class="row"> -->
+      <div class="navbar-brand pl-2 font-weight-bold">Tablica</div>
+      <div class=" p-2 ">adres: tablica.pl/SDAFUE3</div>
+      <div class=" p-2"><a href='#'>Nowa</a></div>
+      <!-- </div> -->
+    </div>
+
+<!-- ===============FOOTER================ -->
+    <div class="fixed-bottom bd-highlight  d-flex ">
+      <!-- <div class="row"> -->
+      <div class=" p-2 ">one</div>
+      <div class="p-2">two</div>
+      <div class="ml-auto p-2">by kjaku 2019</div>
+      <!-- </div> -->
+    </div>
+
+<!-- ==============MAIN============== -->
+    <div class="container ">
+      <h5 class="font-weight-bold">Tablica tytul</h5>
+      <span class="font-weight-light">
+        A navigation bar is a navigation header that is placed at the top of the
+        page.
+      </span> 
+      
+      <ul class="pt-4 list-group list-group-flush">
+        <li class="list-group-item  border-dark">
+          <div class=" d-flex flex-row">
+            <div class=" mr-3 font-weight-light ">time</div>
+            <p class=''>ttext texttexttex tte xttex te xt</p>
+            <p class="ml-auto">autor</p>
+          </div>
+        </li>
+        <li class="list-group-item border-dark">
+          <div class="d-flex flex-row">
+            <div class="mr-3">time</div>
+            <p>ttext texttex ttexttextt ext ext</p>
+            <p class="ml-auto">sdfjautor</p>
+          </div>
+        </li>
+      </ul>
+      <div>
+
+<!-- ===============FORM================ -->
+<form class="col-lg-8 mt-5 ml-auto">
+  <div class="form-group">
+    <label class="font-weight-bold">Dodaj wpis:</label>
+    <textarea name="textArea" id=""  rows="2" class="form-control border border-dark" placeholder="Tekst"></textarea>
+    <div class="d-flex m-2 justify-content-end">
+      <input type="text" class="col-4 form-control border border-dark" placeholder="Autor">
+      <button type="submit" class="ml-1 btn btn-dark">Dodaj</button>
+    </div>
+  </div>
+</form>
+      </div>
+    </div>
+<!-- <img src="https://qrcode.online/img/?type=text&size=5&data=hello qr code">  -->
+  </body>
+</html>

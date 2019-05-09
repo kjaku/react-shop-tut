@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ProductConsumer } from '../../context';
-import { ButtonContainer } from '../Button';
 import Title from '../Title';
 import CartColumns from './CartColumns.js';
 import EmptyCart from './EmptyCart.js';
@@ -18,10 +17,10 @@ class Cart extends Component {
             if (cart.length > 0) {
               return (
                 <React.Fragment>
-                  <Title classname="your" title="cart" />
-                  <CartTotal value={value} />
+                  <Title classname="your" title="Koszyk" />
                   <CartColumns />
                   <CartList value={value} />
+                  <CartTotal value={value} hist={this.props.history} />
                 </React.Fragment>
               );
             } else {

@@ -1,25 +1,36 @@
 :root {
-  --mainBlue: #2a2a72;
-  --lightBlue: #009ffd;
+  --mainCol: #4b3135;
+  --lightCol: #7da88e;
+  /* --mainWhite: white; */
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
-  --mainYellow: #ffa400;
+  --mainYellow: #ffba3b;
 }
+
 body {
   font-family: 'Lato', sans-serif !important;
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
+
+h1 {
+}
 .text-title {
   font-family: 'Hammersmith One', sans-serif;
   letter-spacing: 0.3rem;
-  text-transform: uppercase;
+  color: var(--mainCol);
+  /* font-size: 5vw; */
+  /* text-transform: uppercase; */
+}
+@media only screen and (max-width: 420px) {
+  .text-title {
+    font-size: 1.2rem;
+  }
 }
 .text-blue {
-  color: var(--mainBlue);
 }
 .text-bright {
-  color: var(--lightBlue);
+  color: var(--lightCol);
 }
 
 .btn-black {
@@ -39,5 +50,9 @@ body {
 .cart-icon {
   cursor: pointer;
   font-size: 1.2rem;
+  color: var(--mainYellow);
+}
+
+.accent {
   color: var(--mainYellow);
 }

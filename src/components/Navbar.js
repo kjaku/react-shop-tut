@@ -1,43 +1,56 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
 import styled from 'styled-components';
-import { ButtonContainer } from './Button';
+import KoszykButton from './KoszykButton.js';
+
 class Navbar extends Component {
   render() {
     return (
-      <NavWrapper className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
-        {/* 
-https://www.iconfinder.com/icons/1243689/call_phone_icon
-Creative Commons (Attribution 3.0 Unported);
-https://www.iconfinder.com/Makoto_msk */}
-        <Link to="/">
-          <img src={logo} alt="store" className="navbar-brand" />
+      <NavWrapper className="navbar navbar-expand-sm text-truncate  bg-primary navbar-dark px-sm-5">
+        {/* <div className="navbar-nav "> */}
+        <Link to="/" className="nav-item  nav-link">
+          Na co pieniążki
         </Link>
-        <ul className="navbar-nav align-items-center">
-          <li className="nav-item ml-5" />
-          <Link to="/" className="nav-link">
-            products
-          </Link>
-        </ul>
-        <Link to="/cart" className="ml-auto">
-          <ButtonContainer>
-            <span className="mr-2">
-              <i className="fas fa-cart-plus" />
-            </span>
-            my cart
-          </ButtonContainer>
+        {/* <li className="nav-item ml-auto"> */}
+        <Link
+          to="/about"
+          className="nav-item ml-auto text-capitalize mr-0 nav-link"
+        >
+          O Stronie
+        </Link>
+        {/* </li> */}
+        {/* </div> */}
+        <Link to="/cart" className="mr-1">
+          <KoszykButton />
         </Link>
       </NavWrapper>
     );
   }
 }
+
 const NavWrapper = styled.nav`
-  background: var(--mainBlue) !important;
+  background: var(--mainCol) !important;
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   .nav-link {
-    color: var(--mainWhite) !important;
+    color: var(--mainYellow) !important;
     font-size: 1.3rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+  }
+
+  @media only screen and (max-width: 600px) {
+    .nav-link {
+      font-size: 12px;
+    }
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
+
 export default Navbar;
